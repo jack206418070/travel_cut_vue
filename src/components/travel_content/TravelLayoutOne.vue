@@ -1,7 +1,7 @@
 <template>
   <div class="travel" :class="{'bg': background}">
     <div class="container p-m-0">
-      <div class="travel-bg mb-10">
+      <div class="travel-bg mb-10" :class="{'reverse': reverse}">
         <div class="content">
           <h3>{{ travelData.day }}</h3>
           <p>
@@ -138,6 +138,12 @@ export default {
       }
     },
     background: {
+      type: Boolean,
+      default () {
+        return false
+      }
+    },
+    reverse: {
       type: Boolean,
       default () {
         return false

@@ -10,6 +10,7 @@
     v-for = "(item, index) in travelData"
     :key = "item.name"
     :background = "index % 2 !== 0 ? true : false"
+    :reverse = "index % 2 !== 0 ? true : false"
     :travel-data = "item"
   />
   <PriceInfo />
