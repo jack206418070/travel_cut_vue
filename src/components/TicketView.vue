@@ -11,7 +11,7 @@
             <span>2022.8.10 (三) ~ </span> <span>2022.8.12 (五)</span>
           </p>
         </li>
-        <li class="align-self-start">
+        <li class="align-self-start price">
           <h3 class="d-flex">
             <img src="@/assets/images/icon-price.png" alt="date" />
             <span>費用</span>

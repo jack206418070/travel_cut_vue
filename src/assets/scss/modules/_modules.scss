@@ -290,6 +290,20 @@
       .connect{
         padding: 24px;
         padding-bottom: 0;
+        .price{
+          margin-bottom: 20px;
+          h3{
+            flex: 0 0 20%;
+            margin-right: 32px;
+          }
+          p{
+            padding-left: 0;
+            margin-right: 0;
+            span{
+              padding-left: 8px;
+            }
+          }
+        }
         ul{
           flex-wrap: wrap;
         }
@@ -309,20 +323,6 @@
           span{
             display: inline !important;
             white-space: nowrap;
-          }
-        }
-        .price{
-          margin-bottom: 20px;
-          h3{
-            flex: 0 0 20%;
-            margin-right: 32px;
-          }
-          p{
-            padding-left: 0;
-            margin-right: 0;
-            span{
-              padding-left: 8px;
-            }
           }
         }
         button{
