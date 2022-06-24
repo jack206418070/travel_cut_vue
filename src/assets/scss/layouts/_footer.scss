@@ -1,0 +1,128 @@
+footer{
+  position: relative;
+  svg{
+    vertical-align: middle;
+    height: auto;
+  }
+  .f-top{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 1024px) {
+      top: 40%
+    }
+    @media (max-width: 1024px) {
+      top: 60%
+    }
+    @media (max-width: 576px) {
+      flex-direction: column;
+      top: -100%
+    }
+    @media (max-width: 414px) {
+      flex-direction: column;
+      top: -50%
+    }
+    .logo{
+      margin-right: 60px;
+      @media (max-width: 576px) {
+        margin: 0 auto;
+        margin-bottom: 16px;
+      }
+    }
+    img{
+      width: 160px;
+      object-fit: contain;
+      @media (max-width: 576px) {
+        width: 88px;
+      }
+    }
+    .f-desc{
+      color: var(--textSecondary);
+      @media (max-width: 576px) {
+        text-align: center;
+      }
+      h2{
+        font-weight: bold;
+        @media (max-width: 576px) {
+          font-size: .875rem;
+          margin-bottom: 8px;
+        }
+      }
+      a, p{
+        color: var(--textSecondary);
+        font-size: 0.875rem;
+        line-height: 1.5;
+        display: block;
+        @media (max-width: 576px) {
+          font-size: .75rem;
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }
+  .bg-back-footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: -1;
+    svg{
+      fill: var(--secondary);
+    }
+    .mobile{
+      display: none;
+    }
+    @media (max-width: 576px) {
+      .computed{
+        display: none;
+      }
+      .mobile{
+        display: block;
+      }
+    }
+  }
+  .f-content{
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 165px;
+    @media (max-width: 576px) {
+      flex-direction: column;
+      padding-top: 90px;
+    }
+    .bg-footer{
+      position: absolute;
+      width: 100%;
+      bottom: 0px;
+      z-index: -1;
+      .mobile{
+        display: none;
+      }
+      @media (max-width: 576px) {
+        .computed{
+          display: none;
+        }
+        .mobile{
+          display: block;
+        }
+      }
+    }
+    .logo{
+      margin-right: 60px;
+      @media (max-width: 414px) {
+        margin: 0 auto;
+        margin-bottom: 16px;
+      }
+    }
+    img{
+      width: 160px;
+      object-fit: contain;
+      @media (max-width: 414px) {
+        width: 88px;
+      }
+    }
+  }
+}

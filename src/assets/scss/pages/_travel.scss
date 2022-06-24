@@ -1,0 +1,308 @@
+.travel{
+  margin-bottom: 80px;
+  position: relative;
+  svg{
+    fill: var(--primary);
+  }
+  &.bg{
+    &::before{
+      content:'';
+      position: absolute;
+      width: 100%;
+      background-size: cover;
+      background-image: linear-gradient(var(--secondary), var(--secondary)) ,url('@/assets/images/travelBg.svg');
+      background-blend-mode: screen;
+      background-repeat: no-repeat;
+      height: 200%;
+      top: -500px;
+      z-index: -10;
+      @media (max-width: 414px) {
+        background-repeat: no-repeat;
+        background-position: center center;
+        top: -400px;
+        height: 200%;
+      }
+    }
+  }
+}
+.travel-bg{
+  background: linear-gradient(90deg, var(--primary) 18.01%, rgba(255, 91, 0, 0) 98.51%), url('@/assets/images/travel-banner.png');
+  height: 280px;
+  border-radius: 4px;
+  position: relative;
+  padding: 40px 110px;
+  .content{
+    width: 35%;
+    position: absolute;
+    h3{
+      font-size: 2rem;
+      color: white;
+      padding-bottom: 24px;
+      display: inline-block;
+      position: relative;
+      &::before{
+        position: absolute;
+        content: '';
+        border-top: 2px solid #fff;
+        width: 60%;
+        background-color: #fff;
+        bottom: 0;
+      }
+    }
+    p{
+      line-height: 1.5;
+      color: white;
+      margin-top: 24px;
+    }
+  }
+  @media (max-width: 1024px) {
+    padding: 24px;
+    .content{
+      width: 60%;
+    }
+  }
+  @media (max-width: 768px) {
+    padding: 24px;
+    .content{
+      width: 95%;
+    }
+  }
+  @media (max-width: 414px) {
+    height: 195px;
+    background: linear-gradient(90deg, var(--primary) -8.23%, rgba(255, 91, 0, 0) 127.33%), url('@/assets/images/mobile-travel-bg.png');
+    background-size: cover;
+    .content{
+      padding-right: 24px;
+      h3{
+        font-size: 1rem;
+        padding-bottom: 10px;
+      }
+      p{
+        margin-top: 8px;
+        font-size: 0.875rem;
+      }
+    }
+  }
+  &.reverse{
+    background: linear-gradient(90deg, rgba(255, 91, 0, 0) 15.9%, var(--primary) 98.51%), url('@/assets/images/travel-banner-reverse.png');
+    .content{
+      right: 120px;
+      text-align: right;
+      h3{
+        &::before{
+          right: 0;
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      .content{
+        right: 25px;
+      }
+    }
+    @media (max-width: 414px) {
+      background: linear-gradient(90deg, var(--primary) -8.23%, rgba(255, 91, 0, 0) 127.33%), url('@/assets/images/mobile-travel-bg.png');
+      background-size: cover;
+      .content{
+        left: 25px;
+        padding-right: 25px;
+        text-align: left;
+        h3{
+          &::before{
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.travel-inner{
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 414px) {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  .travel-title{
+    flex: 0 0 38%;
+    background: #fff;
+    @media (max-width: 768px) {
+      flex: 0 0 100%;
+      padding-right: 0;
+    }
+    @media (max-width: 414px) {
+      background: transparent;
+    }
+    ul{
+      border: 1px solid #E5E5E5;
+      border-radius: 5px;
+      @media (max-width: 414px) {
+        border: none;
+        padding: 0;
+      }
+    }
+    li{
+      padding: 24px;
+      border: 1px solid #E5E5E5;
+      border-radius: 5px;
+      display: flex;
+      margin-bottom: 24px;
+      transition: .3s;
+      cursor: pointer;
+      &:hover{
+        border: 1px solid var(--primary);
+      }
+      &.active{
+        border: 1px solid var(--primary);
+      }
+      @media (max-width: 1024px) {
+        display: block;
+      }
+      @media (max-width: 768px) {
+        display: flex;
+      }
+      @media (max-width: 414px){
+        padding: 16px;
+        background: #fff;
+      }
+      img{
+        align-self: flex-start;
+        @media (max-width: 1024px) {
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 10px;
+        }
+        @media (max-width: 414px){
+          width: 107px;
+          object-fit: cover;
+        }
+      }
+      .desc{
+        padding-left: 24px;
+        @media (max-width: 1024px) {
+          padding-left: 0;
+        }
+        @media (max-width: 768px) {
+          padding-left: 24px;
+        }
+        @media (max-width: 414px){
+          padding-left: 16px;
+          flex: 1 0 auto;
+        }
+        h3{
+          font-weight: bold;
+          margin-bottom: 4px;
+          color: var(--primary);
+          @media (max-width: 1024px) {
+            text-align: center;
+          }
+          @media (max-width: 768px) {
+            text-align: left;
+          }
+          @media (max-width: 414px){
+            font-size: .875rem;
+          }
+        }
+        p{
+          line-height: 1.5;
+          color: #292929;
+          font-size: .875rem;
+          text-align: justify;
+          text-justify:inter-ideograph;
+          @media (max-width: 768px) {
+            margin-bottom: 18px;
+          }
+          @media (max-width: 414px){
+            width: 150px;
+            font-size: .75rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            margin-bottom: 12px;
+          }
+        }
+        a{
+          display: none;
+          font-size: .75rem;
+          margin-left: auto;
+          width: 65px;
+          svg{
+            width: 7px;
+            height: 12px;
+            transform: rotate(-90deg);
+            right: 0px;
+            top: 2px;
+          }
+          @media (max-width: 768px) {
+            display: block;
+          }
+        }
+      }
+      &.more{
+        justify-content: center;
+        border:none;
+        margin-bottom: 0;
+        padding: 10px 0;
+        display: flex;
+        @media (max-width: 414px) {
+          border: 1px solid #E5E5E5;
+        }
+      }
+      a{
+        color: var(--primary);
+        position: relative;
+        svg{
+          position: absolute;
+          top: 8px;
+          right: -20px;
+          width: 8px;
+          height: 5px;
+          transition: transform .3s;
+          &.less{
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+  .travel-content{
+    flex: 0 0 58%;
+    align-self: stretch;
+    position: relative;
+    overflow-y: hidden;
+    background: #fff;
+    @media (max-width: 768px) {
+      display: none;
+    }
+    .inner{
+      height: 100%;
+      border-radius: 5px;
+      border: 1px solid #E5E5E5;
+      .desc{
+        position: absolute;
+        padding-right: 24px;
+        height: calc(100% - 330px);
+        overflow-y: auto;
+        @media (max-width: 768px) {
+          overflow-y: visible;
+        }
+        h3{
+          font-size: 1.25rem;
+          color: #292929;
+          margin-bottom: 8px;
+        }
+        p{
+          font-size: 0.875rem;
+          line-height: 1.5;
+          text-align: justify;
+          text-justify:inter-ideograph;
+          margin-bottom: 8px;
+        }
+      }
+    }
+    .swiper{
+      margin-bottom: 36px;
+    }
+  }
+}

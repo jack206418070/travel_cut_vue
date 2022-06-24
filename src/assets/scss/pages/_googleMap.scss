@@ -1,0 +1,149 @@
+.googleMap{
+  position: relative;
+  height: 800px;
+  .btn-computed, .btn-mobile{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-mobile{
+    display: none;
+  }
+  @media (max-width: 576px) {
+    .btn-mobile{
+      display: block;
+    }
+    .btn-computed{
+      display: none;
+    }
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    background-image: url('@/assets/images/googleMapBg-1-removebg.png');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 1000px;
+    bottom: 50px;
+    z-index: -2;
+  }
+  @media (max-width: 1024px) {
+    height: 500px;
+    &::before{
+      height: 800px;
+    }
+  }
+  @media (max-width: 768px) {
+    height: 500px;
+    &::before{
+      height: 800px;
+      background-position: center center;
+      background-size: contain;
+      bottom: 0;
+    }
+  }
+  @media (max-width: 576px) {
+    height: 250px;
+    &::before{
+      height: 300px;
+      background-position: center center;
+      background-size: cover;
+      bottom: 0;
+    }
+  }
+  &::after{
+    content:'';
+    position:absolute;
+    background-image: url('@/assets/images/googleMapBg-4.png');
+    background-repeat: no-repeat;
+    z-index: -1;
+    bottom: -45px;
+    width: 295px;
+    height: 295px;
+    @media (max-width: 768px) {
+      width: 150px;
+      height: 150px;
+      background-size: contain;
+    }
+  }
+  .googleApi{
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    @media (max-width: 414px) {
+      width: 330px;
+    }
+    &::before{
+      content:'';
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      top: -50px;
+      left: -90px;
+      background-image: url('@/assets/images/googleMapBg-2.png');
+      background-repeat: no-repeat;
+      z-index: -1;
+      @media (max-width: 768px) {
+        width: 150px;
+        height: 150px;
+        left: -100px;
+      }
+      @media (max-width: 414px) {
+        background-image: url('@/assets/images/mobile-googleApi.png');
+        top: -30px;
+        left: -15px;
+      }
+    }
+    &::after{
+      content:'';
+      position: absolute;
+      width: 260px;
+      height: 60px;
+      bottom: -140px;
+      right: -190px;
+      background-image: url('@/assets/images/googleMapBg-3.png');
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+  .refrenceRoad{
+    background: linear-gradient(78.12deg, var(--forthary) -10.2%, var(--primary) 115.8%);
+    position: absolute;
+    width: 45%;
+    right:0;
+    margin-top: -55px;
+    p{
+      font-size: 2rem;
+      color: var(--textSecondary);
+      font-weight: 500;
+      &::before{
+        content: "";
+        position: absolute;
+        width: 60%;
+        height: 1px;
+        background-color: var(--textSecondary);
+        right:0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+    @media (max-width: 768px) {
+      width: 50%;
+      padding: 12px;
+      margin-top: -25px;
+      p{
+        font-size: 1rem;
+      }
+    }
+    @media (max-width: 414px) {
+      width: 50%;
+      padding: 8px;
+      margin-top: -15px;
+      p{
+        font-size: .75rem;
+      }
+    }
+  }
+}

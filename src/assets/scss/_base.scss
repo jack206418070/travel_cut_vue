@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html, body{
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  line-height: 1.2;
+}
+.outer {
+  &.theme1{
+    --primary: #FF5B00;
+    --secondary: #FFF0E5;
+    --thirdary: rgba(255, 91, 0, 0);
+    --forthary: #FF5B00;
+    --textPrimary: #FF5B00;
+    --textSecondary: #FFFFFF;
+  }
+  &.theme2{
+    --primary: #26BEC9;
+    --secondary: #E9F8FA;
+    --thirdary: rgba(38, 190, 201, 0);
+    --forthary: #26BEC9;
+    --textPrimary: #26BEC9;
+    --textSecondary: #FFFFFF;
+  }
+  &.theme3{
+    --primary: #210CAE;
+    --secondary: #E6EDFF;
+    --thidary: rgba(33, 12, 174, 0);
+    --forthary: #4DC9E6;
+    --textPrimary: #210CAE;
+    --textSecondary: #FFFFFF;
+  }
+  &.theme4{
+    --primary: #5CB270;
+    --secondary: #E9F3EB;
+    --thidary: rgba(92, 178, 112, 0);
+    --forthary: #F4F269;
+    --textPrimary: #1F4929;
+    --textSecondary: #1F4929;
+  }
+  &.theme5{
+    --primary: #AA6BD3;
+    --secondary: #F2EBF7;
+    --thidary: rgba(170, 107, 211, 0);
+    --forthary: #DD6A9A;
+    --textPrimary: #AA6BD3;
+    --textSecondary: #FFFFFF;
+  }
+}
+svg{
+  width: 100%;
+}
+a{
+  text-decoration: none;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+img{
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+p, a, span, li, td, th, h1, h2, h3, h4, h5{
+  font-family: 'Noto Sans TC', sans-serif;
+}
+.container{
+  max-width: 1330px;
+  padding: 0 25px;
+  margin: 0 auto;
+}
