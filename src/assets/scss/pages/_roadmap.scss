@@ -45,7 +45,6 @@
   @media (max-width: 700px){
     overflow-x: auto;
     overflow-y: hidden;
-    width: 700px;
   }
   @media (max-width: 414px){
     width: 414px;
@@ -224,7 +223,8 @@
           height: 30px;
           top: -35px;
           left: 12px;
-          border-left: 2px dashed var(--primary);  
+          border-left: 0.5px solid var(--primary);
+          border-right: 1.5px solid var(--primary);
           border-image: repeating-linear-gradient( var(--forthary), var(--primary) 5px, transparent 4px, transparent 8px) 1;
         }
       }
@@ -239,9 +239,9 @@
           position: absolute;
           height: 60px;
           top: -65px;
-          width: 2px;
           left: 12px;
-          border-left: 2px dashed var(--primary);
+          border-left: 0.5px solid var(--primary);
+          border-right: 1.5px solid var(--primary);
           border-image: repeating-linear-gradient( var(--forthary), var(--primary) 5px, transparent 4px, transparent 8px) 1;
         }
       }
@@ -256,9 +256,9 @@
           position: absolute;
           height: 60px;
           bottom: -65px;
-          width: 2px;
           left: 12px;
-          border-left: 2px dashed var(--primary);
+          border-left: 0.5px solid var(--primary);
+          border-right: 1.5px solid var(--primary);
           border-image: repeating-linear-gradient( var(--forthary), var(--primary) 5px, transparent 4px, transparent 8px) 1;
         }
       }
@@ -273,9 +273,9 @@
           position: absolute;
           height: 30px;
           bottom: -35px;
-          width: 2px;
           left: 12px;
-          border-left: 2px dashed var(--primary);
+          border-left: 0.5px solid var(--primary);
+          border-right: 1.5px solid var(--primary);
           border-image: repeating-linear-gradient( var(--forthary), var(--primary) 5px, transparent 4px, transparent 8px) 1;
         }
       }

@@ -43,6 +43,10 @@ export default {
 <style lang="scss" scoped>
 .googleMap {
   height: auto;
+  margin-bottom: 190px;
+  @media (max-width: 414px) {
+    margin-bottom: 32px;
+  }
   &::before {
     display: none;
   }

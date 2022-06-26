@@ -6,7 +6,7 @@
   <GoogleMap
     @open-travel-modal = "openTravelModal"
   />
-  <TravelLayoutOne
+  <TravelLayout
     v-for = "(item, index) in travelData"
     :key = "item.name"
     :background = "index % 2 !== 0 ? true : false"
@@ -29,7 +29,7 @@ import TicketView from '@/components/TicketView.vue'
 import HeaderView from '@/components/layout1/HeaderView'
 import RoadMapView from '@/components/layout1/RoadMapView'
 import GoogleMap from '@/components/GoogleMap.vue'
-import TravelLayoutOne from '@/components/travel_content/TravelLayoutOne'
+import TravelLayout from '@/components/travel_content/TravelLayoutOne'
 import PriceInfo from '@/components/layout1/PriceInfo'
 import TravelModal from '@/components/TravelModal.vue'
 
@@ -40,11 +40,11 @@ export default {
     HeaderView,
     RoadMapView,
     GoogleMap,
-    TravelLayoutOne,
+    TravelLayout,
     PriceInfo,
     TravelModal
   },
-  props: ['is_theme'],
+  props: ['theme'],
   data () {
     return {
       travelRoadMap: ['景點1', '景點2', '景點3', '景點4', '景點5', '景點6', '景點7', '景點8', '景點9', '景點10', '景點11', '景點12', '景點13', '景點14'],

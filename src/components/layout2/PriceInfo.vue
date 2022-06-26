@@ -6746,7 +6746,7 @@ export default {}
   .price-content {
     padding: 40px 70px;
     @media (max-width: 414px) {
-      padding: 22px 40px;
+      padding: 40px 22px;
     }
     li {
       font-size: 0.875rem;

@@ -1,6 +1,12 @@
 <template>
   <div class="roadmap2">
-    <div class="roadmap2-bg"></div>
+    <div class="roadmap2-bg" :class="theme">
+      <img src="@/assets/images/layout2/Layout2_Web_RoadMap.svg">
+      <img src="@/assets/images/layout2/Layout2_Web_RoadMap02.svg">
+      <img src="@/assets/images/layout2/Layout2_Web_RoadMap03.svg">
+      <img src="@/assets/images/layout2/Layout2_Web_RoadMap04.svg">
+      <img src="@/assets/images/layout2/Layout2_Web_RoadMap05.svg">
+    </div>
     <ul class="count14">
       <li class="top-s">
         <p>目的地</p>
@@ -77,7 +83,16 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    theme: {
+      type: String,
+      default () {
+        return 'theme1'
+      }
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -97,11 +112,47 @@ export default {}
   &-bg{
     position: absolute;
     width: 100%;
-    background-color: var(--secondary);
     top: 0;
     left: 0;
     height: 100%;
-    opacity: .4;
+    img{
+      display: none;
+    }
+    &.theme1{
+      img{
+        &:nth-child(1) {
+          display: block;
+        }
+      }
+    }
+    &.theme2{
+      img{
+        &:nth-child(2) {
+          display: block;
+        }
+      }
+    }
+    &.theme3{
+      img{
+        &:nth-child(3) {
+          display: block;
+        }
+      }
+    }
+    &.theme4{
+      img{
+        &:nth-child(4) {
+          display: block;
+        }
+      }
+    }
+    &.theme5{
+      img{
+        &:nth-child(5) {
+          display: block;
+        }
+      }
+    }
     @media (max-width: 576px) {
       width: 1080px;
       &.count-normal{
@@ -137,6 +188,7 @@ export default {}
     }
     @media (max-width: 414px) {
       padding: 0 40px;
+      height: 350px;
     }
     @media (max-width: 576px){
       justify-content: flex-start;

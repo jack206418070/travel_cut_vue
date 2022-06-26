@@ -9,7 +9,7 @@
         <option value="theme5">主題色五</option>
       </select>
     </div>
-    <router-view :is_theme = 'is_theme' />
+    <router-view :theme = 'is_theme' />
   </div>
 </template>
 

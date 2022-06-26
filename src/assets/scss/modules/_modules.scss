@@ -12,7 +12,7 @@
     &-outline{
       background-color: #fff;
       color: var(--textPrimary);
-      border: 3px solid transparent;
+      border: 3px solid var(--primary);
       border-image: linear-gradient(to top , var(--forthary)  0%, var(--primary) 100%);
       border-image-slice: 1;
       clip-path: inset(0 round 5px);
