@@ -17,7 +17,7 @@
 export default {
   data () {
     return {
-      is_theme: 'theme2'
+      is_theme: 'theme1'
     }
   }
 }

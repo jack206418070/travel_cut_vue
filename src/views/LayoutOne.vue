@@ -14,9 +14,7 @@
     :travel-data = "item"
   />
   <PriceInfo />
-  <FooterView
-    :is_theme = 'is_theme'
-  />
+  <FooterView />
   <TravelModal
     ref="travelModal"
   />
@@ -26,13 +24,13 @@
 </template>
 
 <script>
-import FooterView from '@/components/FooterView.vue'
+import FooterView from '@/components/layout1/FooterView'
 import TicketView from '@/components/TicketView.vue'
-import HeaderView from '@/components/HeaderView.vue'
-import RoadMapView from '@/components/RoadMapView.vue'
+import HeaderView from '@/components/layout1/HeaderView'
+import RoadMapView from '@/components/layout1/RoadMapView'
 import GoogleMap from '@/components/GoogleMap.vue'
-import TravelLayoutOne from '@/components/travel_content/TravelLayoutOne.vue'
-import PriceInfo from '@/components/PriceInfo.vue'
+import TravelLayoutOne from '@/components/travel_content/TravelLayoutOne'
+import PriceInfo from '@/components/layout1/PriceInfo'
 import TravelModal from '@/components/TravelModal.vue'
 
 export default {

@@ -55,14 +55,8 @@
               y2="-930.034"
               gradientUnits="userSpaceOnUse"
             >
-              <stop
-                offset="0.124993"
-                :stop-color="theme[is_theme.split('theme')[1]].forthary"
-              />
-              <stop
-                offset="0.927091"
-                :stop-color="theme[is_theme.split('theme')[1]].primary"
-              />
+              <stop offset="0.124993" />
+              <stop offset="0.927091" />
             </linearGradient>
           </defs>
         </svg>
@@ -89,14 +83,8 @@
               y2="0%"
               gradientUnits="userSpaceOnUse"
             >
-              <stop
-                offset="0.124993"
-                :stop-color="theme[is_theme.split('theme')[1]].forthary"
-              />
-              <stop
-                offset="0.927091"
-                :stop-color="theme[is_theme.split('theme')[1]].primary"
-              />
+              <stop offset="0.124993" />
+              <stop offset="0.927091" />
             </linearGradient>
           </defs>
         </svg>
@@ -115,42 +103,3 @@
     </div>
   </footer>
 </template>
-
-<script>
-export default {
-  props: {
-    is_theme: {
-      type: String,
-      default () {
-        return 'theme1'
-      }
-    }
-  },
-  data () {
-    return {
-      theme: {
-        1: {
-          primary: '#FF5B00',
-          forthary: '#FF5B00'
-        },
-        2: {
-          primary: '#26BEC9',
-          forthary: '#26BEC9'
-        },
-        3: {
-          primary: '#210CAE',
-          forthary: '#4DC9E6'
-        },
-        4: {
-          primary: '#5CB270',
-          forthary: '#F4F269'
-        },
-        5: {
-          primary: '#AA6BD3',
-          forthary: '#DD6A9A'
-        }
-      }
-    }
-  }
-}
-</script>

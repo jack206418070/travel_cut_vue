@@ -101,6 +101,16 @@ footer{
       .mobile{
         display: none;
       }
+      svg{
+        stop{
+          &:nth-child(1){
+            stop-color: var(--forthary);
+          }
+          &:nth-child(2){
+            stop-color: var(--primary);
+          }
+        }
+      }
       @media (max-width: 576px) {
         .computed{
           display: none;
