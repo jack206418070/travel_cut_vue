@@ -819,7 +819,7 @@ header {
           stroke: var(--primary);
         }
       }
-      @media (max-width: 375px) {
+      @media (max-width: 414px) {
         width: 305px !important;
         height: auto;
       }
@@ -833,8 +833,11 @@ header {
       @media (max-width: 996px) {
         right: 25%;
       }
-      @media (max-width: 375px) {
+      @media (max-width: 414px) {
         width: 60px !important;
+        right: -40px;
+      }
+      @media (max-width: 375px) {
         right: 40%;
       }
     }
