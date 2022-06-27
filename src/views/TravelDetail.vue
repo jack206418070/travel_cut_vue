@@ -1,6 +1,11 @@
 <template>
-  <div class="m-travelDetail">
+  <div class="travelDetail">
     <div class="title">
+      <router-link to="/layout2">
+        <img src="@/assets/images/logo.png" alt="logo">
+      </router-link>
+    </div>
+    <div class="m-title">
       <router-link to="/">
         <svg
           class="prePage"
@@ -19,6 +24,30 @@
       <p>詳細資訊</p>
     </div>
     <div class="image">
+      <div class="image-left">
+        <img src="@/assets/images/澎湖灣1.png" alt="澎湖">
+      </div>
+      <div class="image-right">
+        <div class="image-group">
+          <div class="img">
+            <img src="@/assets/images/澎湖灘.png" alt="澎湖">
+          </div>
+          <div class="img">
+            <img src="@/assets/images/澎湖灘.png" alt="澎湖">
+          </div>
+          <div class="img">
+            <img src="@/assets/images/澎湖灘.png" alt="澎湖">
+          </div>
+          <div class="img">
+            <img src="@/assets/images/澎湖灘.png" alt="澎湖">
+            <div class="more" @click="is_show = true">
+              <p>+5</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m-image">
       <Swiper
         :modules="modules"
         :slides-per-view="1"
@@ -39,8 +68,9 @@
         </SwiperSlide>
       </Swiper>
     </div>
-    <div class="desc">
+    <div class="content">
       <h4 class="desc-title">第一天</h4>
+      <div class="desc">
       <h3>澎湖灘</h3>
       <p>
         趣味漁村導覽之旅，高處遠眺小白沙嶼、小富士山、後山大峽谷。在本島除了奎壁山與赤嶼間的岩脈易於觀察之外，後寮赤崁頭東岸、西溪至成功灣的海蝕平台上以及山水、鎖港等地，都有成分不盡相同的岩脈外露。潮間帶位於大海及陸地敏感的區域，棲地環境時而乾燥或潮濕，時而高溫或低溫，時而高鹽度或低鹽度，環境變化非常大，也孕育出海洋無限的生機。
@@ -51,31 +81,61 @@
       <p>
         趣味漁村導覽之旅，高處遠眺小白沙嶼、小富士山、後山大峽谷。在本島除了奎壁山與赤嶼間的岩脈易於觀察之外，後寮赤崁頭東岸、西溪至成功灣的海蝕平台上以及山水、鎖港等地，都有成分不盡相同的岩脈外露。潮間帶位於大海及陸地敏感的區域，棲地環境時而乾燥或潮濕，時而高溫或低溫，時而高鹽度或低鹽度，環境變化非常大，也孕育出海洋無限的生機。
       </p>
-    </div>
-    <div class="map">
-      <h4>地點</h4>
-      <p>澎湖縣白沙鄉</p>
-      <div class="google">
-        <img src="@/assets/images/googleMap.png" alt="googlemap" />
+      </div>
+      <div class="map">
+        <div>
+          <h4>地點</h4>
+          <p>澎湖縣白沙鄉</p>
+        </div>
+        <div class="google">
+          <img src="@/assets/images/googleMap.png" alt="googlemap" />
+        </div>
       </div>
     </div>
+    <div class="image-modal" :class="{'show': is_show}" @click.self="is_show = false">
+      <Swiper
+        :modules="modules"
+        :slides-per-view="1"
+        :space-between="20"
+        loop
+        navigation
+        :speed="1000"
+        :pagination="{ clickable: true }"
+      >
+        <SwiperSlide>
+          <img src="@/assets/images/澎湖灣1.png" alt="澎湖" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="@/assets/images/澎湖灣1.png" alt="澎湖" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="@/assets/images/澎湖灣1.png" alt="澎湖" />
+        </SwiperSlide>
+      </Swiper>
+      <div class="close" @click="is_show = false">X</div>
+    </div>
   </div>
+  <FooterView />
 </template>
 
 <script>
-import { Pagination, Autoplay } from 'swiper'
+import { Pagination, Autoplay, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
+import FooterView from '@/components/layout2/FooterView'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
 export default {
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    FooterView
   },
   data () {
     return {
-      modules: [Pagination, Autoplay]
+      modules: [Pagination, Autoplay, Navigation],
+      is_mobile: false,
+      is_show: false
     }
   },
   mounted () {
@@ -84,5 +144,10 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+footer{
+  @media (max-width: 576px) {
+    display: none;
+  }
+}
 </style>

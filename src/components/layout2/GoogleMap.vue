@@ -1,11 +1,7 @@
 <template>
   <div class="googleMap">
     <div class="googleApi">
-      <a
-        href="javascript:;"
-        class="btn-computed"
-        @click="$emit('openTravelModal')"
-      ></a>
+      <router-link to="/detail" class="btn-computed"></router-link>
       <router-link to="/detail" class="btn-mobile"></router-link>
       <img src="@/assets/images/googleMap.png" alt="googleApi" />
     </div>
@@ -35,9 +31,7 @@
 </template>
 
 <script>
-export default {
-  emits: ['openTravelModal']
-}
+export default {}
 </script>
 
 <style lang="scss" scoped>
@@ -53,7 +47,7 @@ export default {
   &::after {
     display: none;
   }
-  svg{
+  svg {
     position: absolute;
     left: -45px;
     width: 20%;
@@ -90,7 +84,11 @@ export default {
   }
   .reference-layout2 {
     position: absolute;
-    background: linear-gradient(90deg, var(--forthary) -10.2%, var(--primary) 115.8%);;
+    background: linear-gradient(
+      90deg,
+      var(--forthary) -10.2%,
+      var(--primary) 115.8%
+    );
     width: 20%;
     height: 85%;
     left: -10px;

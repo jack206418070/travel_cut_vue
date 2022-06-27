@@ -1,7 +1,12 @@
 <template>
-  <HeaderView />
+  <metainfo>
+    <template v-slot:title="{ content }">{{ content ? `${content} | SITE_NAME` : `SITE_NAME` }}</template>
+  </metainfo>
+  <HeaderView
+    :header_data = "header_data"
+  />
   <RoadMapView
-    :travel-road-map = "travelRoadMap"
+    :travel-road-map = "locations"
   />
   <GoogleMap
     @open-travel-modal = "openTravelModal"
@@ -14,7 +19,9 @@
     :travel-data = "item"
   />
   <PriceInfo />
-  <FooterView />
+  <FooterView
+    :company_data="company_data"
+  />
   <TravelModal
     ref="travelModal"
   />
@@ -32,8 +39,28 @@ import GoogleMap from '@/components/GoogleMap.vue'
 import TravelLayout from '@/components/travel_content/TravelLayoutOne'
 import PriceInfo from '@/components/layout1/PriceInfo'
 import TravelModal from '@/components/TravelModal.vue'
+// import { useMeta } from 'vue-meta'
+import { useHead } from '@vueuse/head'
+// import { computed, reactive } from 'vue'
 
 export default {
+  setup () {
+    // const siteData = reactive({
+    //   title: 'My website',
+    //   description: 'My beautiful website'
+    // })
+
+    // useHead({
+    //   // Can be static or computed
+    //   title: computed(() => siteData.title),
+    //   meta: [
+    //     {
+    //       name: 'description',
+    //       content: computed(() => siteData.description)
+    //     }
+    //   ]
+    // })
+  },
   components: {
     FooterView,
     TicketView,
@@ -44,10 +71,84 @@ export default {
     PriceInfo,
     TravelModal
   },
-  props: ['theme'],
+  props: {
+    name: {
+      type: String,
+      required: true
+    },
+    summary: {
+      type: String,
+      required: true
+    },
+    code: {
+      type: String,
+      required: true
+    },
+    price_per_person: {
+      type: Number,
+      required: true
+    },
+    travel_start: {
+      type: String,
+      required: true
+    },
+    travel_end: {
+      type: String,
+      required: true
+    },
+    total_day: {
+      type: Number,
+      required: true
+    },
+    itinerary_content: {
+      type: Array,
+      required: true
+    },
+    include_description: {
+      type: String,
+      required: true
+    },
+    exclude_description: {
+      type: String,
+      required: true
+    },
+    company_data: {
+      type: Object,
+      required: true
+    },
+    // refund_policy: {
+    //   type: String,
+    //   required: true
+    // },
+    itinerary_group_note: {
+      type: String,
+      required: true
+    },
+    if_show_logo: {
+      type: Boolean,
+      required: true
+    },
+    if_show_signup: {
+      type: Boolean,
+      required: true
+    },
+    if_show_locations: {
+      type: Boolean,
+      required: true
+    },
+    locations: {
+      type: Object,
+      required: true
+    }
+  },
   data () {
     return {
-      travelRoadMap: ['景點1', '景點2', '景點3', '景點4', '景點5', '景點6', '景點7', '景點8', '景點9', '景點10', '景點11', '景點12', '景點13', '景點14'],
+      header_data: {
+        name: this.name,
+        summary: this.summary,
+        code: this.code,
+        content: '暑期好玩好去處'
+      },
       travelData: [
         {
           day: '第一天',
@@ -119,6 +220,18 @@ export default {
     openTravelModal () {
       this.$refs.travelModal.openModal()
     }
+  },
+  mounted () {
+    useHead({
+      // Can be static or computed
+      title: this.name,
+      meta: [
+        {
+          name: 'description',
+          content: this.name
+        }
+      ]
+    })
   }
 }
 </script>

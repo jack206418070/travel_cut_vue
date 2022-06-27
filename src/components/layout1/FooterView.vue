@@ -92,14 +92,20 @@
     </div>
     <div class="f-top d-flex">
       <div class="logo">
-        <img src="@/assets/images/logo.png" alt="logo" />
+        <img :src="company_data.logo_path" alt="logo" />
       </div>
       <div class="f-desc">
-        <h2 class="mb-4">好好玩旅行社股份有限公司</h2>
-        <a class="mb-2" href="tel:02-23456789">02-23456789</a>
-        <p class="mb-2">100988 台北市中正區重慶北路二段9999號</p>
-        <p>交觀綜 5555 號・品保北 8888 號</p>
+        <h2 class="mb-4">{{ company_data.title }}</h2>
+        <a class="mb-2" href="tel:02-23456789">{{ company_data.tel }}</a>
+        <p class="mb-2">{{ company_data.address }}</p>
+        <p>交觀綜第 {{ company_data.ta_register_num }} 號・品保{{ company_data.tqaa_num }} 號</p>
       </div>
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  props: ['company_data']
+}
+</script>

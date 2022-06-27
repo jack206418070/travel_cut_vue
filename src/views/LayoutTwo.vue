@@ -1,8 +1,6 @@
 <template>
   <HeaderView />
-  <RoadMapView
-    :theme="theme"
-  />
+  <RoadMapView />
   <GoogleMap
     @open-travel-modal="openTravelModal"
   />
@@ -14,9 +12,6 @@
   <TicketView
    :fixed = true
   />
-  <TravelModal
-    ref="travelModal"
-  />
 </template>
 
 <script>
@@ -26,7 +21,6 @@ import FooterView from '@/components/layout2/FooterView'
 import PriceInfo from '@/components/layout2/PriceInfo'
 import GoogleMap from '@/components/layout2/GoogleMap'
 import RoadMapView from '@/components/layout2/RoadMapView'
-import TravelModal from '@/components/TravelModal.vue'
 import TicketView from '@/components/TicketView.vue'
 
 export default {
@@ -37,10 +31,8 @@ export default {
     PriceInfo,
     GoogleMap,
     RoadMapView,
-    TravelModal,
     TravelLayout
   },
-  props: ['theme'],
   data () {
     return {
       travelData: [
@@ -112,15 +104,6 @@ export default {
         }
       ]
     }
-  },
-  methods: {
-    openTravelModal () {
-      this.$refs.travelModal.openModal()
-    }
   }
 }
 </script>
-
-<style>
-
-</style>

@@ -54,52 +54,6 @@
                 </div>
               </li>
             </SwiperSlide>
-            <!-- <SwiperSlide>
-              <li>
-                <img src="@/assets/images/layout2/澎湖攤.png" alt="澎湖">
-                <div class="desc">
-                  <h3>澎湖灘</h3>
-                  <p>趣味漁村導覽之旅，高處遠眺小白沙嶼、小富士山、後山大峽谷。在本島除了奎壁山與赤嶼間的岩脈易於觀察之外，後寮赤崁頭東岸、西溪至成功灣的海蝕平台上以及山水、鎖港等地，都有成分不盡相同的岩脈外露。潮間帶位於大海及陸地敏感的區域，棲地環境時而乾燥或潮濕，時而高溫或低溫，時而高鹽度或低鹽度，環境變化非常大，也孕育出海洋無限的生機。趣味漁村導覽之旅，高處遠眺小白沙嶼、小富士山、後山大峽谷。在本島除了奎壁山與赤嶼間的岩脈易於觀察之外，後寮赤崁頭東岸、西溪至成功灣的海蝕平台上以及...</p>
-                  <router-link to="/detail">
-                    <span>查看更多</span>
-                    <svg
-                      width="8"
-                      height="5"
-                      viewBox="0 0 8 5"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7.84169 1.0774L4.29551 4.70106C4.2533 4.74407 4.20756 4.77446 4.15831 4.79224C4.10906 4.8103 4.05629 4.81934 4 4.81934C3.94371 4.81934 3.89094 4.8103 3.84169 4.79224C3.79244 4.77446 3.7467 4.74407 3.70449 4.70106L0.147757 1.0774C0.0492524 0.977042 0 0.851594 0 0.701056C0 0.550519 0.0527704 0.421487 0.158311 0.31396C0.263852 0.206433 0.386983 0.152669 0.527704 0.152669C0.668426 0.152669 0.791557 0.206433 0.897098 0.31396L4 3.47525L7.1029 0.31396C7.20141 0.213601 7.32271 0.163422 7.46681 0.163422C7.61119 0.163422 7.73615 0.217185 7.84169 0.324712C7.94723 0.432239 8 0.557687 8 0.701056C8 0.844426 7.94723 0.969874 7.84169 1.0774Z"
-                      />
-                    </svg>
-                  </router-link>
-                </div>
-              </li>
-            </SwiperSlide>
-            <SwiperSlide>
-              <li>
-                <img src="@/assets/images/layout2/澎湖攤.png" alt="澎湖">
-                <div class="desc">
-                  <h3>澎湖灘</h3>
-                  <p>趣味漁村導覽之旅，高處遠眺小白沙嶼、小富士山、後山大峽谷。在本島除了奎壁山與赤嶼間的岩脈易於觀察之外，後寮赤崁頭東岸、西溪至成功灣的海蝕平台上以及山水、鎖港等地，都有成分不盡相同的岩脈外露。潮間帶位於大海及陸地敏感的區域，棲地環境時而乾燥或潮濕，時而高溫或低溫，時而高鹽度或低鹽度，環境變化非常大，也孕育出海洋無限的生機。趣味漁村導覽之旅，高處遠眺小白沙嶼、小富士山、後山大峽谷。在本島除了奎壁山與赤嶼間的岩脈易於觀察之外，後寮赤崁頭東岸、西溪至成功灣的海蝕平台上以及...</p>
-                  <router-link to="/detail">
-                    <span>查看更多</span>
-                    <svg
-                      width="8"
-                      height="5"
-                      viewBox="0 0 8 5"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7.84169 1.0774L4.29551 4.70106C4.2533 4.74407 4.20756 4.77446 4.15831 4.79224C4.10906 4.8103 4.05629 4.81934 4 4.81934C3.94371 4.81934 3.89094 4.8103 3.84169 4.79224C3.79244 4.77446 3.7467 4.74407 3.70449 4.70106L0.147757 1.0774C0.0492524 0.977042 0 0.851594 0 0.701056C0 0.550519 0.0527704 0.421487 0.158311 0.31396C0.263852 0.206433 0.386983 0.152669 0.527704 0.152669C0.668426 0.152669 0.791557 0.206433 0.897098 0.31396L4 3.47525L7.1029 0.31396C7.20141 0.213601 7.32271 0.163422 7.46681 0.163422C7.61119 0.163422 7.73615 0.217185 7.84169 0.324712C7.94723 0.432239 8 0.557687 8 0.701056C8 0.844426 7.94723 0.969874 7.84169 1.0774Z"
-                      />
-                    </svg>
-                  </router-link>
-                </div>
-              </li>
-            </SwiperSlide> -->
           </Swiper>
         </ul>
       </li>
@@ -131,13 +85,42 @@ export default {
       modules: [Navigation],
       swiper_per: 3,
       swiper_between: 40,
-      is_show: true
+      is_show: true,
+      screenWidth: 0
+    }
+  },
+  methods: {
+    watchDeviceWidth () {
+      const vm = this
+      window.addEventListener('resize', function () {
+        return (() => {
+          window.screenWidth = document.body.clientWidth
+          vm.screenWidth = window.screenWidth
+        })()
+      })
+    },
+    initSwiper () {
+      const result = window.matchMedia('(max-width: 414px)').matches
+      if (result) {
+        this.swiper_per = 1
+        this.swiper_between = 15
+      }
+    }
+  },
+  watch: {
+    screenWidth () {
+      if (this.screenWidth <= 414) {
+        this.swiper_per = 1
+        this.swiper_between = 15
+      } else {
+        this.swiper_per = 3
+        this.swiper_between = 40
+      }
     }
   },
   mounted () {
-    const result = window.matchMedia('(max-width: 414px)').matches
-    result ? this.swiper_per = 1 : this.swiper_per = 3
-    result ? this.swiper_between = 20 : this.swiper_between = 40
+    this.initSwiper()
+    this.watchDeviceWidth()
   }
 }
 </script>

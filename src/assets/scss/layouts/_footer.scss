@@ -28,6 +28,11 @@ footer{
     }
     .logo{
       margin-right: 60px;
+      img{
+        width: 160px;
+        height: 72px;
+        object-fit: contain;
+      }
       @media (max-width: 576px) {
         margin: 0 auto;
         margin-bottom: 16px;
